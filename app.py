@@ -9,6 +9,12 @@ def show_options():
     print('3. Activate Restaurant')
     print('4. Exit\n')
 
+def show_subtitle(text):
+    os.system('clear')
+    print(text)
+    print()
+
+
 def go_back_to_main_menu():
     input('Type any key to go back to main menu ')
     main()
@@ -21,16 +27,14 @@ def invalid_option():
     go_back_to_main_menu()
 
 def create_restaurant():
-    os.system('clear')
-    print('Create a new restaurant\n')
+    show_subtitle('Create a new restaurant')
     restaurant_name = input('Type new restaurant name: ')
     restaurants.append(restaurant_name)
     print(f'The restaurant {restaurant_name} was created with success')
     go_back_to_main_menu()
 
 def list_restaurants():
-    os.system('clear')
-    print('List of all restaurants\n')
+    show_subtitle('List of all restaurants')
     
     for restaurant in restaurants:
         print(f'Restaurant {restaurant}')
