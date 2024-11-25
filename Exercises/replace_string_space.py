@@ -6,8 +6,7 @@ def str_replace(text,ch):
             result += i 
     return result
 
-text = "D t C mpBl ckFrid yS le"
-ch = "a"
+text = "l vey u"
+ch = "o"
 
-str_replace(text,ch)
-# 'DataCampBlackFridaySale'
+print(str_replace(text,ch))
