@@ -1,5 +1,7 @@
 import os
 
+restaurants = ['Bobs Burguer', 'Sushi Rock']
+
 def show_options():
     print('Flavour Express\n')
     print('1. Create Restaurant')
@@ -7,19 +9,32 @@ def show_options():
     print('3. Activate Restaurant')
     print('4. Exit\n')
 
+def go_back_to_main_menu():
+    input('Type any key to go back to main menu ')
+    main()
+
 def end_program():
     os.system('clear') 
 
 def invalid_option():
     print('Invalid option!\n')
-    input('Type any key to re-start program: ')
-    main()
+    go_back_to_main_menu()
 
 def create_restaurant():
     os.system('clear')
-    print('Create a new restaurant')
-    restaurant_name = str(input('Type new restaurant name: '))
+    print('Create a new restaurant\n')
+    restaurant_name = input('Type new restaurant name: ')
+    restaurants.append(restaurant_name)
+    print(f'The restaurant {restaurant_name} was created with success')
+    go_back_to_main_menu()
 
+def list_restaurants():
+    os.system('clear')
+    print('List of all restaurants\n')
+    
+    for restaurant in restaurants:
+        print(f'Restaurant {restaurant}')
+    go_back_to_main_menu()
 
 def choose_option():
     try:
@@ -28,7 +43,7 @@ def choose_option():
         if chosen_option == 1:
             create_restaurant()
         elif chosen_option == 2:
-            print('List Restaurant')
+            list_restaurants()
         elif chosen_option == 3:
             print('Activate Restaurant')
         elif chosen_option == 4:
@@ -45,4 +60,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
