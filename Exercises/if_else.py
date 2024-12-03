@@ -48,8 +48,33 @@ def definir_coordenadas():
         print(f'Quarto Quadrante: X é {x} e Y é {y}, sendo x maior que zero e y menor que zero')
     else:
         print('Ponto esta localizado no eixo ou origem')
-
 definir_coordenadas()
 
+# Crie um programa que receba o número de vendas dos dois produtos e exiba uma mensagem indicando qual deles vendeu mais.
+def vendas():
+    laranjas = 0
+    bananas = 0
+    laranjas = int(input('Quantidade de vendas de laranjas: '))
+    bananas = int(input('Quantidade de vendas de banana: '))
+    if laranjas > bananas:
+        print(f'Foram vendidas {laranjas- bananas} laranjas a mais do que bananas')
+    elif laranjas < bananas:
+        print(f'Foram vendidas {bananas - laranjas} bananas a mais do que laranjas')
+    else:
+        print(f'Foram vendidas a mesma quantidade de laranjas e bananas')
+vendas()
+
+# Escreva um programa que receba o número de dias de três atividades e exiba o tempo total do projeto.
+# Se algum valor for negativo, mostre uma mensagem informando o erro.
+i =1
+total = 0
+while i <= 3:
+    dias = int(input(f'Digite o número de dias da {i} atividade: '))
+    if dias < 0:
+        print('Erro ao digitar o número de dias')
+        break
+    total += dias
+    i += 1
+print(f'Tempo total do projeto: {total}')
 
 
