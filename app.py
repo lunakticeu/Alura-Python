@@ -39,7 +39,7 @@ def create_restaurant():
 
 def list_restaurants():
     show_subtitle('List of all restaurants')
-    print(f'{'Restaurant Name'.ljust(20)} | {'Cuisine'.ljust(20)} | {'Status'.ljust(20)}')
+    print(f'{'Restaurant Name'.ljust(22)} | {'Cuisine'.ljust(20)} | {'Status'.ljust(20)}')
     for restaurant in restaurants:
         print(f' - {restaurant["name"].ljust(20)} | {restaurant["type"].ljust(20)} | {"Active" if restaurant["active"] else "Inactive"}')
     go_back_to_main_menu()
