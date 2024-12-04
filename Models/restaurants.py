@@ -1,20 +1,20 @@
-class Restaurant():
-    restaurants_list = []
-    def __init__(self, name, cuisine):
-        self.name = name
-        self.cuisine = cuisine
-        self.active = False
-        Restaurant.restaurants_list.append(self)
+class Restaurante:
+    restaurantes = []
 
+    def __init__(self, nome, categoria):
+        self.nome = nome
+        self.categoria = categoria
+        self.ativo = False
+        Restaurante.restaurantes.append(self)
+    
     def __str__(self):
-        return f'{self.name} | {self.cuisine}'
+        return f'{self.nome} | {self.categoria}'
+    
+    def listar_restaurantes():
+        for restaurante in Restaurante.restaurantes:
+            print(f'{restaurante.nome} | {restaurante.categoria} | {restaurante.ativo}')
 
-    def list_restaurants(self):
-        for restaurant in Restaurant.restaurants_list:
-            print(f'{restaurant.name} | {restaurant.cuisine} | {"Active" if restaurant.active else "Inactive"}')  
+restaurante_praca = Restaurante('Praça', 'Gourmet')
+restaurante_pizza = Restaurante('Pizza Express', 'Italiana')
 
-restaurant_sushi = Restaurant('Flying Sushi', 'Japanese')
-restaurant_mcdonalds = Restaurant('McDonalds', 'Fast Food')
-restaurant_king = Restaurant('King', 'Italian')
-
-Restaurant.list_restaurants()
+Restaurante.listar_restaurantes()
